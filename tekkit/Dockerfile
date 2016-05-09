@@ -19,11 +19,10 @@ RUN chown -R minecraft /opt/tekkit
 #Download Tekkit Legends
 RUN wget -O /tmp/tekkit.zip http://servers.technicpack.net/Technic/servers/tekkit-legends/Tekkit_Legends_Server_v1.1.1.zip
 RUN unzip /tmp/tekkit.zip -d /opt/tekkit
-ADD ./start.sh /opt/tekkit/start.sh
 RUN chmod +x /opt/tekkit/start.sh
 RUN chown -R minecraft /opt/tekkit
 
-VOLUME /opt/tekkit
+VOLUME ["/opt/tekkit"]
 EXPOSE 25565
 
 WORKDIR /opt/tekkit
