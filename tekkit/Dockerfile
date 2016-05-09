@@ -8,7 +8,7 @@ RUN apt update
 RUN apt -y upgrade
 
 #Install Java
-RUN apt install openjdk-7-jre-headless unzip wget -y
+RUN apt install openjdk-7-jre-headless unzip wget  -y
 
 # Add user minecraft
 RUN adduser --quiet minecraft
@@ -26,4 +26,5 @@ VOLUME /opt/tekkit
 EXPOSE 25565
 
 WORKDIR /opt/tekkit
-ENTRYPOINT ["sudo" "-u" "minecraft" "/opt/tekkit/start.sh"]
+USER minecraft
+ENTRYPOINT ["/opt/tekkit/start.sh"]
