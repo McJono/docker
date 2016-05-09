@@ -3,10 +3,16 @@ version at startup.
 
 To simply use the latest stable version, run
 
-    docker run -d -p 25565:25565 --name mc rizbe/tekkit-legend
+    docker run -d -p 25565:25565 -v /opt/tekkit:/opt/tekkit --name mc rizbe/tekkit-legend
 
-where the standard server port, 25565, will be exposed on your host machine.
+With the -v flag, you're creating a data volume, this means that the minecraft files will be
+accessible to your local machine. For data volumes in Docker, it's typically
+-v someplace/opt/tekkit, for my example, I made the directory tekkit in /opt.
+The advantage of doing this means that your data will always be persistent. If you delete the
+mc container and make a new one, all your minecraft files will be intact. This allows you to
+upgrade, make changes to your server and etc.
 
+Where the standard server port, 25565, will be exposed on your host machine.
 If you want to serve up multiple Minecraft servers or just use an alternate port,
 change the host-side port mapping such as
 
