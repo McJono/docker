@@ -27,4 +27,4 @@ EXPOSE 25565
 
 WORKDIR /opt/tekkit
 USER minecraft
-ENTRYPOINT ["/opt/tekkit/start.sh"]
+ENTRYPOINT ["/bin/sh","/opt/tekkit/start.sh"]
