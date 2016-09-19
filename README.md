@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/image/rizbe/tekkit-legend.svg)](http://microbadger.com/images/rizbe/tekkit-legend "Get your own image badge on microbadger.com")
+
 This docker image provides a Tekkit Legend (Minecraft) Server that will automatically download the latest stable
 version at startup.
 
