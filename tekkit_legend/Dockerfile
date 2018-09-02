@@ -9,7 +9,6 @@ RUN apk upgrade
 
 # Add user minecraft
 RUN adduser -D -H minecraft
-RUN mkdir /opt/
 RUN mkdir /opt/tekkit
 RUN chown -R minecraft /opt/tekkit
 
