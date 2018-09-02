@@ -19,6 +19,7 @@ RUN wget -O /tmp/tekkit.zip http://servers.technicpack.net/Technic/servers/tekki
 RUN unzip /tmp/tekkit.zip -d /opt/tekkit
 RUN chmod +x /opt/tekkit/start.sh
 RUN chown -R minecraft /opt/tekkit
+RUN rm  /tmp/tekkit.zip
 
 VOLUME ["/opt/tekkit"]
 EXPOSE 25565
